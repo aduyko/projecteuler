@@ -21,21 +21,21 @@ data = "08 02 22 97 38 15 00 40 00 75 04 05 07 78 52 12 50 77 91 08
 dimension=20
 max=0
 data.each_index { |i|
-	if i%dimension<dimension-3
-		curval=data[i]*data[i+1]*data[i+2]*data[i+3]
-		if curval>max ; max=curval and maxstartpos=i end 
-	end
-	if i<data.length-dimension*3
-		curval=data[i]*data[i+dimension]*data[i+dimension*2]*data[i+dimension*3] 
-		if curval>max ; max=curval and maxstartpos=i end
-	end
-	if i%dimension<dimension-3 and i<data.length-dimension*3
-		curval=data[i]*data[i+1+dimension]*data[i+2+dimension*2]*data[i+3+dimension*3]
-		if curval>max ; max=curval and maxstartpos=i end 
-	end
-	if i%dimension>2 and i<data.length-dimension*3
-		curval=data[i]*data[i-1+dimension]*data[i-2+dimension*2]*data[i-3+dimension*3]
-		if curval>max ; max=curval and maxstartpos=i end 
-	end
+  if i%dimension<dimension-3
+    curval=data[i]*data[i+1]*data[i+2]*data[i+3]
+    if curval>max ; max=curval and maxstartpos=i end 
+  end
+  if i<data.length-dimension*3
+    curval=data[i]*data[i+dimension]*data[i+dimension*2]*data[i+dimension*3] 
+    if curval>max ; max=curval and maxstartpos=i end
+  end
+  if i%dimension<dimension-3 and i<data.length-dimension*3
+    curval=data[i]*data[i+1+dimension]*data[i+2+dimension*2]*data[i+3+dimension*3]
+    if curval>max ; max=curval and maxstartpos=i end 
+  end
+  if i%dimension>2 and i<data.length-dimension*3
+    curval=data[i]*data[i-1+dimension]*data[i-2+dimension*2]*data[i-3+dimension*3]
+    if curval>max ; max=curval and maxstartpos=i end 
+  end
 }
 print max
