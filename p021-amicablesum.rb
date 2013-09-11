@@ -1,6 +1,6 @@
 def sumDivisors(n)
   sum=0
-  (1..n/2.floor).each{ |i|
+  (1..n/2).each{ |i|
     if n%i==0 ; sum+=i end
   }
   return sum
