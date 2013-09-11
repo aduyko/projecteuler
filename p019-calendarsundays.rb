@@ -9,11 +9,11 @@ sum=0
   dday=doomsday(y) #day of the week 0-6
   (0..11).each{ |i|
     if (y%4==0 and y%100!=0) or y%400==0 and i<2 #on leap year replace jan and feb dday
-      first=(dday+(1-altref[i]))%7
+      first=(dday+(1-altref[i]))%7 #1 is target day(number)
     else
       first=(dday+(1-ref[i]))%7
     end
-    if first==0 ; sum+=1 end
+    if first==0 ; sum+=1 end #first==0 is sunday
   }
 }
 print sum
