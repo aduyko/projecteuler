@@ -18,8 +18,8 @@ end
 max = 1000
 big_n = 0
 product = 0
-(-max+1...max).select.each { |a| a.odd? } .each { |a|
-  (-max+1...max).select.each { |b| b.odd? } .each { |b|
+(-max+1...max).select { |a| a.odd? } .each { |a|
+  (-max+1...max).select { |b| b.odd? } .each { |b|
     n = 0
     while isPrime(n**2+a*n+b) ; n+=1 ; end
     if n>big_n ; big_n = n ; product = a*b end
