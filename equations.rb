@@ -13,3 +13,24 @@ def isPrime(n)
   end
   return true
 end
+
+def genPrimes(limit)
+  crosslimit = Math.sqrt(limit).floor
+  sieve = Array.new(limit+1) { |i| false }
+  (4..limit).step(2) { |i|
+    sieve[i]=true
+  }
+  (3..crosslimit).step(2) { |i|
+    if !sieve[i] 
+      (i*i..limit).step(2*i) { |j|
+        sieve[j] = true
+      }
+    end
+  }
+  sieve[0..1] = [true,true]
+  primes=[]
+  sieve.each_with_index { |i,idx| 
+    if !i ; primes.push idx end
+  }
+  return primes
+end
