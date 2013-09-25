@@ -34,3 +34,29 @@ def genPrimes(limit)
   }
   return primes
 end
+
+def isTriangular?(n)
+  math = (Math.sqrt(8*n + 1) + 1)/2
+  math%1==0
+end
+
+def isPentagonal?(n)
+  math = (Math.sqrt(24*n + 1) + 1)/6
+  math%1==0
+end
+
+def isHexagonal?(n)
+  isTriangular? n
+end
+
+def getTriangular(n)
+  n*(n+1)/2
+end
+
+def getPentagonal(n)
+  n*(3*n-1)/2
+end
+
+def getHexagonal(n)
+  n*(2*n-1)
+end
