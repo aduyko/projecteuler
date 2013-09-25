@@ -1,5 +1,5 @@
 def isPrime(n)
-  if n==1;    return false end
+  if n<=1;    return false end
   if n<4;     return true end
   if n%2==0;    return false end
   if n<9;     return true end
