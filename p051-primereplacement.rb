@@ -28,7 +28,6 @@ end
 target = 8
 answer = []
 digits = 2
-schemas = []
 until answer.length==target
   answer = []
   a = Array.new(digits) { nil }
