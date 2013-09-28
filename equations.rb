@@ -60,3 +60,8 @@ end
 def getHexagonal(n)
   n*(2*n-1)
 end
+
+def factorial(n)
+  if n==0 ; return 1 end
+  (1..n).inject(:*)
+end
