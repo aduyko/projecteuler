@@ -5,7 +5,6 @@ end
 input = File.open('p059-cipher.txt')
 cipher = input.gets.split(",").map { |i| i.to_i }
 input.close
-output = File.open('p059-unciphered','w')
 key = [97,97,97]
 count = 0
 26.times{
@@ -20,13 +19,14 @@ count = 0
         cipher[i] ^= key[i%3]
         unless valid ; break end
       }
-      if valid ; output.write(answer) ; puts answer end
-      sum = 0
-      answer.split("").each { |c|
-        sum+=c.ord
-      }
-      if valid ; puts sum end
-      output.write('\r\n')
+      if valid 
+        puts answer
+        sum = 0
+        answer.split("").each { |c|
+          sum+=c.ord
+        }
+        puts sum 
+      end
       key[2]+=1
     }
     key[1]+=1
@@ -35,4 +35,3 @@ count = 0
   key[0]+=1
   key[1,2]=[97,97]
 }
-output.close
