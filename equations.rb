@@ -46,7 +46,18 @@ def isPentagonal?(n)
 end
 
 def isHexagonal?(n)
-  isTriangular? n
+  math = (Math.sqrt(8*n + 1) + 1)/4
+  math%1==0
+end
+
+def isHeptagonal?(n)
+  math = (Math.sqrt(40*n + 9) + 3)/10
+  math%1==0
+end
+
+def isOctagonal?(n)
+  math = (Math.sqrt(12*n + 4) + 2)/6
+  math%1==0
 end
 
 def getTriangular(n)
@@ -59,6 +70,14 @@ end
 
 def getHexagonal(n)
   n*(2*n-1)
+end
+
+def getHeptagonal(n)
+  n*(5*n-3)/2
+end
+
+def getOctagonal(n)
+  n*(3*n-2)
 end
 
 def factorial(n)
